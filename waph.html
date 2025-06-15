@@ -1,9 +1,6 @@
 <!DOCTYPE HTML>
 <html>
   <style>
-    html {
-  scroll-behavior: smooth;
-}
     .tab {
   float: left;
   border: 1px solid #ccc;
@@ -69,45 +66,14 @@
 </div>
     
 <div class="tab">
-  <button class="tablinks" onclick="a href= #section1 (event, 'Education')" id="defaultOpen">Education</button>
-  <button class="tablinks" onclick="a href= #section2 (event, 'Experience')">Experience</button>
-  <button class="tablinks" onclick="a href= #section3 (event, 'Projects')">Projects</button>
-  <button class="tablinks" onclick="a href= #section3 (event, 'Skills')">Skills</button>
-</div>
-    
-<div id="Education" class="tabcontent">
-  <h3>Education</h3>
-</div>
-
-<div id="Experience" class="tabcontent">
-  <h3>Experience</h3>
-  <a href="#section2">Click Me to Smooth Scroll to Section 2</a>
-</div>
-
-<div id="Projects" class="tabcontent">
-  <h3>Projects</h3>
-  <a href="#section3">Click Me to Smooth Scroll to Section 3</a>
-</div>
-        
-<div id="Skills" class="tabcontent">
-  <h3>Skills</h3>
-  <a href="#section4">Click Me to Smooth Scroll to Section 1</a>
-</div>   
+  <button class="tablinks" onclick="smoothScroll('section1')">Education</button>
+  <button class="tablinks" onclick="smoothScroll('section2')">Experience</button>
+  <button class="tablinks" onclick="smoothScroll('section3')">Projects</button>
+  <button class="tablinks" onclick="smoothScroll('section4')">Skills</button>
+</div> 
       </h2>
     </div>
-    <div id="menubar">
-      <h3>Student: Liam Russell</h3>
-      <div id="email" onclick="showhideEmail()">Show my email</div>
-      <script src="email.js"></script>
-      <img src="pictures/Liam.png" alt="My headshot" width="50">
-    </div>
     <div id="main">
-      <p>A simple HTML page</p>
-      Using the <a href="https://www.w3schools.com/html"> W3Schools template</a>
-      <hr>
-      <div>
-        <div id="response"></div>
-      </div>
       <script>
         $.get("https://v2.jokeapi.dev/joke/Programming?type=single",
               function (result) {
@@ -133,5 +99,12 @@
         <div class="tablinks" id="section4">
   <h2>Skills</h2>
 </div>
+    <script>
+      function smoothScroll(targetId) {
+  document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+}
+    </script>
   </body>
 </html>
+
+
