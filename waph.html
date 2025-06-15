@@ -1,7 +1,9 @@
 <!DOCTYPE HTML>
 <html>
-  scroll-behavior: smooth
   <style>
+    html {
+  scroll-behavior: smooth;
+}
     .tab {
   float: left;
   border: 1px solid #ccc;
@@ -66,26 +68,41 @@
     <div id = "top">
       <h1>Liam Russell</h1>
       <h2>
-      <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+        <div class="Education" id="section1">
+  <h2>Education</h2>
 </div>
 
-<div id="London" class="tabcontent">
-  <h3>London</h3>
-  <p>London is the capital city of England.</p>
+<div class="Experience" id="section2">
+  <h2>Experience</h2>
+</div>
+        
+<div class="Experience" id="section3">
+  <h2>Experience</h2>
+</div>
+        <div class="Skills" id="section4">
+  <h2>Skills</h2>
+</div>
 </div>
 
-<div id="Paris" class="tabcontent">
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p> 
+<div id="Education" class="tabcontent">
+  <h3>Education</h3>
+  <a href="#section1">Click Me to Smooth Scroll to Section 1</a>
 </div>
 
-<div id="Tokyo" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
+<div id="Experience" class="tabcontent">
+  <h3>Experience</h3>
+  <a href="#section2">Click Me to Smooth Scroll to Section 2</a>
 </div>
+
+<div id="Projects" class="tabcontent">
+  <h3>Projects</h3>
+  <a href="#section3">Click Me to Smooth Scroll to Section 3</a>
+</div>
+        
+<div id="Skills" class="tabcontent">
+  <h3>Skills</h3>
+  <a href="#section4">Click Me to Smooth Scroll to Section 1</a>
+</div>   
       </h2>
     </div>
     <div id="menubar">
