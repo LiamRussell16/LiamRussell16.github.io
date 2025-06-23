@@ -41,6 +41,29 @@
   color: #8ae234;
 }
 
+.character-container {
+  font-family: 'Sixtyfour', sans-serif;
+  color: #4e9a06;
+  text-align: center;
+  background-color: #171717;
+  padding: 15px;
+  width: 200px;
+  margin: 20px auto;
+  border: 2px solid #4e9a06;
+  border-radius: 10px;
+}
+
+#face {
+  font-size: 32px;
+  margin-bottom: 10px;
+  transition: 0.3s ease;
+}
+
+#joke-box {
+  font-size: 14px;
+}
+
+
 /* Style the tab content */
 .tabcontent {
   position: fixed;
@@ -99,19 +122,34 @@
 <canvas id="analog-clock" width = "200" height = "200" style="background-color:#171717"></canvas>
 <script src="https://waph-phung.github.io/clock.js"></script>
 
-<div id="response"></div>
+<div class="character-container">
+  <div id="face">:^)</div>
+  <div id="joke-box">Loading joke...</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-  function getNewJoke() {
-    $.get("https://v2.jokeapi.dev/joke/Any?type=single",
-	  function(result) {
-      	  console.log("From JokeAPI: " + JSON.stringify(result));
-      	  $("#response").html("A programming joke of the day: " + result.joke);
-    }
-  );
+  function fetchJoke() {
+    $.get("https://v2.jokeapi.dev/joke/Any?type=single", function (result) {
+      console.log("From JokeAPI: " + JSON.stringify(result));
+      $("#joke-box").html(result.joke);
+    });
   }
-  getNewJoke();
-  setInterval(getNewJoke, 60000);
+
+  function updateFace() {
+    const face = $("#face");
+    face.text(face.text() === ":^)" ? ":^o" : ":^)");
+  }
+
+  function updateCharacter() {
+    updateFace();
+    fetchJoke();
+  }
+
+  // Initial setup
+  updateCharacter();
+  setInterval(updateCharacter, 60000);
 </script>
+
 
 </div> 
 	
